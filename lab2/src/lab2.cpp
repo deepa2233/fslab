@@ -36,6 +36,7 @@ void student::read(void)
 }
 void student::pack(void)
 {
+	student s;
 	string buffer;
 	string ss;
 	stringstream out;
@@ -43,7 +44,7 @@ void student::pack(void)
 	ss=out.str();
 	buffer=usn+'|'+name+'|'+ss;
 	buffer.resize(100,'$');
-	fp<<buffer;
+	s.write();
 
 
 }
@@ -82,7 +83,7 @@ int student::search(string )
 		getline(fp,buffer);
 		pos=fp.tellp();
 		s.unpack();}
-		if(usn==key)
+		if(s.usn==key)
 		{
 			flag=1;
 		cout<<"succesfull";
